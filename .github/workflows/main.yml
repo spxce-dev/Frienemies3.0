@@ -1,0 +1,29 @@
+Convert this Vite/React project into a production-ready cPanel deployment build.
+
+Requirements:
+1. Use HashRouter instead of BrowserRouter so routing works on normal cPanel hosting without server rewrite issues.
+2. Set the correct Vite base path in vite.config so assets load properly after build.
+   - If site is hosted at domain root, use base: './'
+   - If hosted in a subfolder, use that folder path correctly
+3. Fix shadcn/ui utils import issues, especially the cn utility in utils.ts or utils.js, so the project builds cleanly.
+4. Check all imports, aliases, and file paths for build compatibility.
+5. Make sure images, CSS, fonts, and JS assets resolve properly in production.
+6. Generate a clean production build with `npm run build`.
+7. Final deployment must be cPanel-ready:
+   - upload only the contents of the dist folder into public_html or the target folder
+   - not the dist folder itself unless specifically needed
+8. Keep the existing UI exactly the same unless a change is required for the build to work.
+9. Remove or fix anything that depends on dev-only behavior.
+10. Output:
+   - updated code files
+   - exact changes made
+   - final deployment steps for cPanel
+
+Extra checks:
+- Ensure page refreshes do not break routing
+- Ensure asset paths are relative and production-safe
+- Ensure the app works after direct upload to cPanel
+- Ensure no localhost/dev references remain
+
+Goal:
+Deliver a fully working production build of this Vite/React app that can be uploaded to cPanel and run without blank pages, broken assets, or routing issues.
